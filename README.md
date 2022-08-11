@@ -48,7 +48,7 @@ ppnet(
 ## 2. Supplementary Materials
 
 - Supplementary Material: [ [pdf](https://ieeexplore.ieee.org/abstract/document/9707646/) | [supp](https://ieeexplore.ieee.org/abstract/document/9707646/media#media)  ]
-- Pretrained Models: [[:key: iavt ]](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA)
+- Pretrained Models: [ [@](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA) ] :key: iavt
 - Raspberry Pi 4B Development Environment Establishment: [:scroll:](https://github.com/xuliangcs/env/blob/main/doc/RaspberryPi4B.md) 
 - Publicly Available Datasets: [Tongji](https://sse.tongji.edu.cn/linzhang/contactlesspalm/index.htm), [IITD](https://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm), [REST](https://ieee-dataport.org/open-access/rest-database),[NTU](https://github.com/BFLTeam/NTU_Dataset), [XJTU-UP](https://gr.xjtu.edu.cn/en/web/bell)
 - Profiler: `pip install ptflops` [Flops-Counter](https://github.com/sovrasov/flops-counter.pytorch) 
