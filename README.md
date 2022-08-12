@@ -1,28 +1,6 @@
 # ppnet
-![ppnet](./res/ppnet.png)
 
-## 1. Supplementary Materials
-
-- Supplementary Material: [ [pdf](https://ieeexplore.ieee.org/abstract/document/9707646/) | [supp](https://ieeexplore.ieee.org/abstract/document/9707646/media#media)  ]
-- Raspberry Pi 4B Development Environment Establishment: [:scroll:](https://github.com/xuliangcs/env/blob/main/doc/RaspberryPi4B.md) 
-- Publicly Available Datasets: [Tongji](https://sse.tongji.edu.cn/linzhang/contactlesspalm/index.htm), [IITD](https://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm), [REST](https://ieee-dataport.org/open-access/rest-database),[NTU](https://github.com/BFLTeam/NTU_Dataset), [XJTU-UP](https://gr.xjtu.edu.cn/en/web/bell)
-- Profiler: `pip install ptflops` [Flops-Counter](https://github.com/sovrasov/flops-counter.pytorch) 
-
-
-
-## 2. Citation
-
-```tex
-@article{liang2022innovative,
-title={Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment},
-author={Liang, Xu and Li, Zhaoqun and Fan, Dandan and Zhang, Bob and Lu, Guangming and Zhang, David},
-journal={IEEE Transactions on Systems, Man, and Cybernetics: Systems},
-year={2022},
-publisher={IEEE}
-}
-```
-
-## 3. Framework
+## 1. Framework
 
 ```shell
 ppnet(
@@ -65,6 +43,27 @@ ppnet(
 )
 ```
 
+
+## 2. Supplementary Materials
+
+- Supplementary Material: [ [pdf](https://ieeexplore.ieee.org/abstract/document/9707646/) | [supp](https://ieeexplore.ieee.org/abstract/document/9707646/media#media)  ]
+- Pretrained Models: [ [@](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA) ] :key: iavt
+- Raspberry Pi 4B Development Environment Establishment: [:scroll:](https://github.com/xuliangcs/env/blob/main/doc/RaspberryPi4B.md) 
+- Publicly Available Datasets: [Tongji](https://sse.tongji.edu.cn/linzhang/contactlesspalm/index.htm), [IITD](https://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm), [REST](https://ieee-dataport.org/open-access/rest-database),[NTU](https://github.com/BFLTeam/NTU_Dataset), [XJTU-UP](https://gr.xjtu.edu.cn/en/web/bell)
+- Profiler: `pip install ptflops` [Flops-Counter](https://github.com/sovrasov/flops-counter.pytorch) 
+
+
+## 3. Citation
+
+```tex
+@article{liang2022innovative,
+title={Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment},
+author={Liang, Xu and Li, Zhaoqun and Fan, Dandan and Zhang, Bob and Lu, Guangming and Zhang, David},
+journal={IEEE Transactions on Systems, Man, and Cybernetics: Systems},
+year={2022},
+publisher={IEEE}
+}
+```
 
 ## 4. PyTorch Implementation
 
@@ -118,9 +117,6 @@ python    getGI.py   ./rst/veriEER/scores_xxx.txt    scores_xxx
 #obtain the EER and the ROC curve
 python    getEER.py   ./rst/veriEER/scores_xxx.txt    scores_xxx
 ```
-> The `.pth` file will be generated at the current folder, and all the other results will be generated in the `./rst` folder.
-
-Pretrained Models: [ [@](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA) ] :key: iavt
+The `.pth` file will be generated at the current folder, and all the other results will be generated in the `./rst` folder.
 
 [![How to use pretrained models](https://img.shields.io/badge/Goto-UsePretrained-green)](https://github.com/xuliangcs/ppnet/blob/main/res/README_pretrained.md)
-
