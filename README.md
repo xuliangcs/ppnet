@@ -1,4 +1,4 @@
-# ppnet
+# PPNet
 
 ## 1. Framework
 
@@ -70,11 +70,16 @@ publisher={IEEE}
 **Requirements**
 
 - pytorch-1.2.0 
+
 - torchvision-0.4.0
+
 - python-3.7.4
+
 - anaconda-4.9.0
+
 - opencv-3.2.7 
 
+ :point_right:[establishment](https://github.com/xuliangcs/env/blob/main/doc/PyTorch.md#PyTorch1.2)
 
 **Configurations**
 
