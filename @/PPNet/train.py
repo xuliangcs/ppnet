@@ -89,7 +89,8 @@ def contrastive_loss(target, dis, margin=5.0):
     y2 = target[n:]
 
     y = np.zeros((1, n), dtype=np.float)
-    y = y.squeeze()
+    if n > 1:
+        y = y.squeeze()
     y = torch.Tensor(y)    
     
 
