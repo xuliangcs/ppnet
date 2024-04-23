@@ -1,6 +1,6 @@
 # PPNet
 
-[ [paper](https://ieeexplore.ieee.org/document/9512475) | [supp](https://github.com/xuliangcs/compnet/blob/main/Supplementary%20Material.pdf) | [cite](./res/cite.txt) | [license](./LICENSE) ]
+[ [paper](https://ieeexplore.ieee.org/document/9707646) | [cite](./res/cite.txt) | [license](./LICENSE) ]
 
 
 ## 1. Framework
