@@ -24,20 +24,13 @@ from models import MyDataset
 from models import ppnet
 from utils import *
 
-python_path = '/home/sunny/local/anaconda3/envs/torch37/bin/python'
 
 
-
-
-
-
-
-print('%s'%(time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())))
+print('%s \n'%(time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())))
 
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
-
 
 
 training_set = './data/train.txt'
@@ -65,10 +58,10 @@ data_loader_show = DataLoader(dataset=trainset, batch_size=8, shuffle=True)
 
 
 
-net = ppnet(num_classes=600) # IITD: 460    KTU: 145    Tongji: 600     REST: 358   DCPD:271    XJTU: 200
+net = ppnet(num_classes=271) # IITD: 460    KTU: 145    Tongji: 600     REST: 358   DCPD: 271    XJTU: 200 <---------
 # net.load_state_dict(torch.load('net_params.pkl'))
 
-print(net)
+# print(net)
 
 
 
@@ -88,7 +81,7 @@ def contrastive_loss(target, dis, margin=5.0):
     y1 = target[:n]
     y2 = target[n:]
 
-    y = np.zeros((1, n), dtype=np.float)
+    y = np.zeros((1, n), dtype=float)
     if n > 1:
         y = y.squeeze()
     y = torch.Tensor(y)    

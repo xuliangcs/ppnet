@@ -1,5 +1,8 @@
 # PPNet
 
+[ [paper](https://ieeexplore.ieee.org/document/9512475) | [supp](https://github.com/xuliangcs/compnet/blob/main/Supplementary%20Material.pdf) | [cite](./res/cite.txt) | [license](./LICENSE) ]
+
+
 ## 1. Framework
 
 ```shell
@@ -43,43 +46,58 @@ ppnet(
 )
 ```
 
-
 ## 2. Supplementary Materials
 
+- Paper: [online](https://ieeexplore.ieee.org/document/9512475)
+
 - Supplementary Material: [ [pdf](https://ieeexplore.ieee.org/abstract/document/9707646/) | [supp](https://ieeexplore.ieee.org/abstract/document/9707646/media#media)  ]
-- Pretrained Models: [ [@](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA) ] :key: iavt
+- Pretrained Models: [google]() or [baidu:key:iavt](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA)
+
 - Raspberry Pi 4B Development Environment Establishment: [:scroll:](https://github.com/xuliangcs/env/blob/main/doc/RaspberryPi4B.md) 
-- Publicly Available Datasets: [Tongji](https://sse.tongji.edu.cn/linzhang/contactlesspalm/index.htm), [IITD](https://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm), [REST](https://ieee-dataport.org/open-access/rest-database),[NTU](https://github.com/BFLTeam/NTU_Dataset), [XJTU-UP](https://gr.xjtu.edu.cn/en/web/bell)
+
+- Publicly Available Datasets: [DCPD](http://xliang.me/res/supp/dual-camera/dcpd.txt), [Tongji](https://cslinzhang.github.io/ContactlessPalm), [IITD](https://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm), [REST](https://ieee-dataport.org/open-access/rest-database), [NTU](https://github.com/BFLTeam/NTU_Dataset), [XJTU-UP](https://gr.xjtu.edu.cn/en/web/bell)
+
 - Profiler: `pip install ptflops` [Flops-Counter](https://github.com/sovrasov/flops-counter.pytorch) 
 
 
-## 3. Citation
 
-```tex
-@article{liang2022innovative,
-title={Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment},
-author={Liang, Xu and Li, Zhaoqun and Fan, Dandan and Zhang, Bob and Lu, Guangming and Zhang, David},
-journal={IEEE Transactions on Systems, Man, and Cybernetics: Systems},
-year={2022},
-publisher={IEEE}
-}
-```
+## 3. PyTorch Implementation
 
-## 4. PyTorch Implementation
+![](https://img.shields.io/badge/Ubuntu-tested-green) ![](https://img.shields.io/badge/Windows11-tested-green) 
 
 **Requirements**
+Recommanded hardware requirement **for training**:
+- `GPU Mem` $\ge$ 3G
+- `CPU Mem` $\ge$ 16G
 
-- pytorch-1.2.0 
+Software development environment:
+- [cuda&cudnn&gpu-driver](https://github.com/xuliangcs/env/blob/main/doc/PyTorch.md)
+- `Anaconda`: [download & install](https://www.anaconda.com/download/success)
+- `PyTorch`: installation command lines are as follows
+  ```
+  conda create -n ppnet python=3.8 
+  conda activate ppnet
 
-- torchvision-0.4.0
+  conda install pytorch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0 cudatoolkit=11.0 -c pytorch
 
-- python-3.7.4
+  pip install -r requirements.txt
+  ```
+tips:
+- `requirements.txt` could be found at the root folder of this project
+- use different [CUDA versions](https://pytorch.org/get-started/previous-versions/#v170)
 
-- anaconda-4.9.0
 
-- opencv-3.2.7 
+Supported versions:
 
- :point_right:[establishment](https://github.com/xuliangcs/env/blob/main/doc/PyTorch.md#PyTorch1.2)
+- pytorch：1.2 to 1.7
+
+- torchvision：0.4 to 0.8
+
+- python: 3.7 to 3.8
+
+
+
+ :point_right:[more details](https://github.com/xuliangcs/env/blob/main/doc/PyTorch.md)
 
 **Configurations**
 
@@ -88,18 +106,21 @@ publisher={IEEE}
     - `path1`: path of the training set (e.g., Tongji session1)
     - `path2`: path of the testing set (e.g., Tongji session2)
     
-2. modify `num_classes` in `train.py` and `test.py`
-    - Tongji: 600, IITD: 460, REST: 358, XJTU-UP: 200, KTU: 145, DCPD: 271
-    
-3. modify `python_path` in `train.py` and `test.py` according to which python you are using. ('python')
+2. modify `num_classes` in `train.py`, `test.py`, and `inference.py`
+    - DCPD: 271, Tongji: 600, IITD: 460, REST: 358, XJTU-UP: 200, KTU: 145
 
 **Commands**
 
 
 ```shell
 cd path/to/PPNet/
-
 #in the PPNet folder:
+
+#prepare data
+cp ./data/for_reference/genText_xxx.py ./data/genText.py
+#where xxx is the dataset name, e.g., tongji =>genText_tongji.py
+Modify the DB path variable in ./data/genText.py
+#the sample naming format should be consistent with the script's requirements
 
 #generate the training and testing data sets
 python ./data/genText.py
@@ -108,20 +129,48 @@ mv ./test.txt ./data/
 
 #train the network
 python train.py
-
 #test the model
 python test.py
-
 #inference
 python inference.py
 
 #Metrics
 #obtain the genuine-impostor matching score distribution curve
 python    getGI.py   ./rst/veriEER/scores_xxx.txt    scores_xxx
-
 #obtain the EER and the ROC curve
 python    getEER.py   ./rst/veriEER/scores_xxx.txt    scores_xxx
 ```
 The `.pth` file will be generated at the current folder, and all the other results will be generated in the `./rst` folder.
 
 [![How to use pretrained models](https://img.shields.io/badge/Goto-UsePretrained-green)](https://github.com/xuliangcs/ppnet/blob/main/res/README_pretrained.md)
+
+
+## 6. Citation
+🌻If it helps you, please cite the following paper:🌱
+
+```tex
+@article{liang2022innovative,
+  author={Liang, Xu and Li, Zhaoqun and Fan, Dandan and Zhang, Bob and Lu, Guangming and Zhang, David},
+  journal={IEEE Transactions on Systems, Man, and Cybernetics: Systems}, 
+  title={Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment}, 
+  year={2022},
+  volume={52},
+  number={10},
+  pages={6464-6476},
+  doi={10.1109/TSMC.2022.3146777}}
+```
+
+Xu Liang, Zhaoqun Li, Dandan Fan, Bob Zhang, Guangming Lu and David Zhang, "Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment," in IEEE Transactions on Systems, Man, and Cybernetics: Systems, vol. 52, no. 10, pp. 6464-6476, Oct. 2022, doi: 10.1109/TSMC.2022.3146777.
+
+### License
+
+This project is under the CC-BY-NC 4.0 license. See [LICENSE](LICENSE) for details.
+
+
+## References
+
+[1] X. Liang, D. Fan, J. Yang, W. Jia, G. Lu and D. Zhang, "PKLNet: Keypoint Localization Neural Network for Touchless Palmprint Recognition Based on Edge-Aware Regression," in IEEE Journal of Selected Topics in Signal Processing, 17(3), pp. 662-676, May 2023, [doi](https://ieeexplore.ieee.org/document/10049596): 10.1109/JSTSP.2023.3241540. (`Palmprint ROI extraction`) [pklnet](https://github.com/xuliangcs/pklnet)🖖
+
+[2] X. Liang, Z. Li, D. Fan, B. Zhang, G. Lu and D. Zhang, "Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment," in IEEE Transactions on Systems, Man, and Cybernetics: Systems, vol. 52, no. 10, pp. 6464-6476, Oct. 2022, [doi](https://ieeexplore.ieee.org/document/9707646): 10.1109/TSMC.2022.3146777. (`Bimodal alignment`) 
+
+[3] PyTorch API Documents: https://pytorch.org/docs/stable/index.html

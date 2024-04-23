@@ -1,10 +1,29 @@
 [![pvfnet](https://img.shields.io/badge/Backto-PPNet-green)](https://github.com/xuliangcs/ppnet/blob/main/README.md#4-pytorch-implementation)
 
-## Using pretrained models
+## Using Pretrained Models
 
-### Different Number of Classes
+### Same number of classes
 
-Using pretrained models (on Tongji) for PPNet/PVFNet:
+```python
+net = ppnet(num_classes=600)
+net.load_state_dict(torch.load('net_params.pkl'))
+```
+
+
+
+Print Parameters:
+
+```python
+for param in net.named_parameters():
+    print(param)
+
+for param in net.fc1.named_parameters():
+    print(param) 
+```
+
+### Different number of classes
+
+Using pretrained models (on Tongji) for `ppnet` (`pvfnet`):
 
 ```python
 net = ppnet(num_classes=xxx)
@@ -20,7 +39,7 @@ net.load_state_dict(model_dict)
 # net.load_state_dict(torch.load('net_params.pkl'))
 ```
 
-Using pretrained models for resnet *etc.*:
+Using pretrained models for `resnet` *etc.*:
 
 ```python
 from torchvision import models
@@ -37,22 +56,10 @@ model_dict.update(pretrained_dict)
 net.load_state_dict(model_dict)
 ```
 
-### Same Number of Classes
 
-```python
-net = ppnet(num_classes=600)
-net.load_state_dict(torch.load('net_params.pkl'))
+## Different Hardware Platforms
+🗞️tips: GPU -> CPU ([more details](https://pytorch.org/docs/2.1/generated/torch.load.html)):
+```bash
+# training on GPU, test on CPU
+torch.load('net_params.pth', map_location='cpu')
 ```
-
-
-
-Print Parameters:
-
-```python
-for param in net.named_parameters():
-    print(param)
-
-for param in net.fc1.named_parameters():
-	print(param) 
-```
-

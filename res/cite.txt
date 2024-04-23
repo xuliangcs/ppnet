@@ -1,0 +1,9 @@
+@article{liang2022innovative,
+  author={Liang, Xu and Li, Zhaoqun and Fan, Dandan and Zhang, Bob and Lu, Guangming and Zhang, David},
+  journal={IEEE Transactions on Systems, Man, and Cybernetics: Systems}, 
+  title={Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment}, 
+  year={2022},
+  volume={52},
+  number={10},
+  pages={6464-6476},
+  doi={10.1109/TSMC.2022.3146777}}

@@ -19,13 +19,13 @@ class NormSingleROI(object):
 
     def __call__(self, tensor):
 
-        if not T.functional._is_tensor_image(tensor):
-            raise TypeError('tensor is not a torch image.')
+        # if not T.functional._is_tensor_image(tensor):
+        #     raise TypeError('tensor is not a torch image.')
 
 
         c,h,w = tensor.size()
    
-        if c is not 1:
+        if c != 1:
             raise TypeError('only support graysclae image.')
 
         # print(tensor.size)

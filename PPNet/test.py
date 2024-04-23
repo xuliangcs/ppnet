@@ -29,7 +29,6 @@ print('\ndevice-> ', device, '\n\n')
 
 path_rst = './rst/veriEER/' 
 path_hard = os.path.join(path_rst, 'rank1_hard')
-python_path = '/home/sunny/local/anaconda3/envs/torch37/bin/python'
 
 
 model_path = './net_params.pth'
@@ -63,7 +62,7 @@ if not os.path.exists(path_hard):
     os.makedirs(path_hard)
 
 
-num_classes = 600  # IITD: 460    KTU: 145    Tongji: 600     REST: 358   DCPD:271    XJTU: 200
+num_classes = 600  # IITD: 460    KTU: 145    Tongji: 600     REST: 358   DCPD: 271    XJTU: 200 <---------
 net = ppnet(num_classes=num_classes)
 
 # print(net)
@@ -134,11 +133,12 @@ print('featDB_test.shape: ', featDB_test.shape)
 
 
 print('\nfeature extraction done!')
-print('\n\n')
+print('\n')
  
 
 print('start feature matching ...\n')
 
+print('\n\n---------------------')
 print('Verification EER of the test set ...')
 
 # verification EER of the test set
@@ -174,8 +174,8 @@ with open('./rst/veriEER/scores_VeriEER.txt', 'w') as f:
         f.write(score+' '+label+'\n')
 
 
-os.system(python_path + ' ./getGI.py   ./rst/veriEER/scores_VeriEER.txt scores_VeriEER')
-os.system(python_path + ' ./getEER.py  ./rst/veriEER/scores_VeriEER.txt scores_VeriEER')  
+os.system('python ./getGI.py   ./rst/veriEER/scores_VeriEER.txt scores_VeriEER')
+os.system('python ./getEER.py  ./rst/veriEER/scores_VeriEER.txt scores_VeriEER')  
 
 
 
@@ -219,7 +219,7 @@ with open('./rst/veriEER/rank1.txt', 'w') as f:
        
 
 
-print('\nAggregated verification EER of the test set...')
+print('\n\nAggregated verification EER of the test set...')
 
 
 s = np.array(s)
@@ -232,12 +232,13 @@ with open('./rst/veriEER/scores_VeriEER_aggr.txt', 'w') as f:
             f.write(score+' '+label+'\n')
 
 
-os.system(python_path+ ' ./getGI.py   ./rst/veriEER/scores_VeriEER_aggr.txt scores_VeriEER_aggr')
-os.system(python_path+ ' ./getEER.py  ./rst/veriEER/scores_VeriEER_aggr.txt scores_VeriEER_aggr')    
+os.system('python ./getGI.py   ./rst/veriEER/scores_VeriEER_aggr.txt scores_VeriEER_aggr')
+os.system('python ./getEER.py  ./rst/veriEER/scores_VeriEER_aggr.txt scores_VeriEER_aggr')    
 
 
 
-print('\n\nEER of the test set...')
+print('\n\n---------------------')
+print('EER of the test set...')
 # dataset EER of the test set (the gallery set is not used)
 s = [] # matching score
 l = [] # genuine / impostor matching
@@ -267,5 +268,5 @@ with open('./rst/veriEER/scores_EER_test.txt', 'w') as f:
         label = str(l[i])
         f.write(score+' '+label+'\n')
 
-os.system(python_path+ ' ./getGI.py   ./rst/veriEER/scores_EER_test.txt scores_EER_test')
-os.system(python_path+ ' ./getEER.py  ./rst/veriEER/scores_EER_test.txt scores_EER_test')  
+os.system('python ./getGI.py   ./rst/veriEER/scores_EER_test.txt scores_EER_test')
+os.system('python ./getEER.py  ./rst/veriEER/scores_EER_test.txt scores_EER_test')  
