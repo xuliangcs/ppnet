@@ -51,7 +51,7 @@ ppnet(
 - Paper: [online](https://ieeexplore.ieee.org/document/9512475)
 
 - Supplementary Material: [ [pdf](https://ieeexplore.ieee.org/abstract/document/9707646/) | [supp](https://ieeexplore.ieee.org/abstract/document/9707646/media#media)  ]
-- Pretrained Models: [google]() or [baidu:key:iavt](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA)
+- Pretrained Models: [google]() or [baidu :key: iavt](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA)
 
 - Raspberry Pi 4B Development Environment Establishment: [:scroll:](https://github.com/xuliangcs/env/blob/main/doc/RaspberryPi4B.md) 
 
