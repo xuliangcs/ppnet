@@ -48,12 +48,12 @@ ppnet(
 
 ## 2. Supplementary Materials
 
-- Paper: [online](https://ieeexplore.ieee.org/document/9512475)
+- Paper: [online](https://ieeexplore.ieee.org/abstract/document/9707646)
 
-- Supplementary Material: [ [pdf](https://ieeexplore.ieee.org/abstract/document/9707646/) | [supp](https://ieeexplore.ieee.org/abstract/document/9707646/media#media)  ]
-- Pretrained Models: [google]() or [baidu :key: iavt](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA)
+- Supplementary Material: [ [supp](https://ieeexplore.ieee.org/abstract/document/9707646/media#media) | [pdf](https://doi.org/10.1109/TSMC.2022.3146777/mm2) ]
+- Pretrained Models: [google](https://drive.google.com/drive/folders/1xcBzSxIDDWeIKK4mb6XHIdgwGsvQURHc?usp=drive_link) or [baidu :key: iavt](https://pan.baidu.com/s/1Y990hI1diS0bwmCetHTfPA?pwd=iavt)
 
-- Raspberry Pi 4B Development Environment Establishment: [:scroll:](https://github.com/xuliangcs/env/blob/main/doc/RaspberryPi4B.md) 
+- Raspberry Pi 4B Development Environment Establishment: [:scroll:](https://github.com/xuliangcs/env/blob/main/doc/RaspberryPi4B.md)
 
 - Publicly Available Datasets: [DCPD](http://xliang.me/res/supp/dual-camera/dcpd.txt), [Tongji](https://cslinzhang.github.io/ContactlessPalm), [IITD](https://www4.comp.polyu.edu.hk/~csajaykr/IITD/Database_Palm.htm), [REST](https://ieee-dataport.org/open-access/rest-database), [NTU](https://github.com/BFLTeam/NTU_Dataset), [XJTU-UP](https://gr.xjtu.edu.cn/en/web/bell)
 
@@ -70,8 +70,8 @@ Recommanded hardware requirement **for training**:
 - `GPU Mem` $\ge$ 3G
 - `CPU Mem` $\ge$ 16G
 
-Software development environment:
-- [cuda&cudnn&gpu-driver](https://github.com/xuliangcs/env/blob/main/doc/PyTorch.md)
+Development environment establishment:
+- [cuda & cudnn & gpu-driver](https://github.com/xuliangcs/env/blob/main/doc/PyTorch.md)
 - `Anaconda`: [download & install](https://www.anaconda.com/download/success)
 - `PyTorch`: installation command lines are as follows
   ```
@@ -171,6 +171,6 @@ This project is under the CC-BY-NC 4.0 license. See [LICENSE](LICENSE) for detai
 
 [1] X. Liang, D. Fan, J. Yang, W. Jia, G. Lu and D. Zhang, "PKLNet: Keypoint Localization Neural Network for Touchless Palmprint Recognition Based on Edge-Aware Regression," in IEEE Journal of Selected Topics in Signal Processing, 17(3), pp. 662-676, May 2023, [doi](https://ieeexplore.ieee.org/document/10049596): 10.1109/JSTSP.2023.3241540. (`Palmprint ROI extraction`) [pklnet](https://github.com/xuliangcs/pklnet)🖖
 
-[2] X. Liang, Z. Li, D. Fan, B. Zhang, G. Lu and D. Zhang, "Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment," in IEEE Transactions on Systems, Man, and Cybernetics: Systems, vol. 52, no. 10, pp. 6464-6476, Oct. 2022, [doi](https://ieeexplore.ieee.org/document/9707646): 10.1109/TSMC.2022.3146777. (`Bimodal alignment`) 
+[2] X. Liang, Z. Li, D. Fan, B. Zhang, G. Lu and D. Zhang, "Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment," in IEEE Transactions on Systems, Man, and Cybernetics: Systems, vol. 52, no. 10, pp. 6464-6476, Oct. 2022, [doi](https://ieeexplore.ieee.org/document/9707646): 10.1109/TSMC.2022.3146777. (`Bimodal alignment`)
 
 [3] PyTorch API Documents: https://pytorch.org/docs/stable/index.html

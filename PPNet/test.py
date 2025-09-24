@@ -1,4 +1,4 @@
-import torch 
+import torch
 from torch.utils.data import Dataset, DataLoader
 import torch.nn as nn
 import torch.nn.functional as F
@@ -7,7 +7,7 @@ from torch.optim import lr_scheduler
 import torchvision
 from torchvision import transforms
 from torchvision import models
-import cv2 as cv 
+import cv2 as cv
 import os
 import pickle
 import numpy as np
@@ -153,7 +153,6 @@ for i in range(ntest):
     for j in range(ntrain):        
         feat2 = featDB_train[j]
 
-        
         # cosdis =np.dot(feat1,feat2)
         # dis = np.arccos(np.clip(cosdis, -1, 1))/np.pi
 
@@ -188,13 +187,13 @@ corr=0
 for i in range(ntest): 
     probeID = iddb_test[i]
 
-    dis = np.zeros((ntrain, 1))    
+    dis = np.zeros((ntrain, 1))
 
-    for j in range(ntrain):  
+    for j in range(ntrain):
         dis[j] = s[cnt]
-        cnt+=1    
+        cnt+=1
 
-    idx = np.argmin(dis[:]) 
+    idx = np.argmin(dis[:])
 
     galleryID = iddb_train[idx]
 
@@ -269,4 +268,4 @@ with open('./rst/veriEER/scores_EER_test.txt', 'w') as f:
         f.write(score+' '+label+'\n')
 
 os.system('python ./getGI.py   ./rst/veriEER/scores_EER_test.txt scores_EER_test')
-os.system('python ./getEER.py  ./rst/veriEER/scores_EER_test.txt scores_EER_test')  
+os.system('python ./getEER.py  ./rst/veriEER/scores_EER_test.txt scores_EER_test')

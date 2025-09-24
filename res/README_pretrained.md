@@ -1,4 +1,4 @@
-[![pvfnet](https://img.shields.io/badge/Backto-PPNet-green)](https://github.com/xuliangcs/ppnet/blob/main/README.md#4-pytorch-implementation)
+[![ppnet](https://img.shields.io/badge/Backto-PPNet-green)](https://github.com/xuliangcs/ppnet/blob/main/README.md#4-pytorch-implementation)
 
 ## Using Pretrained Models
 
@@ -23,7 +23,7 @@ for param in net.fc1.named_parameters():
 
 ### Different number of classes
 
-Using pretrained models (on Tongji) for `ppnet` (`pvfnet`):
+Using pretrained models (on Tongji) for `ppnet`:
 
 ```python
 net = ppnet(num_classes=xxx)

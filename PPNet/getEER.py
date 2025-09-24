@@ -1,7 +1,7 @@
 import numpy as np
-import os 
+import os
 import pickle
-import json 
+import json
 import shutil
 import time
 import scipy
@@ -29,12 +29,12 @@ if len(sys.argv) < 3:
     pathScore = './scores.txt' 
     surname = 'scores'
 else:
-    pathScore = sys.argv[1]    
+    pathScore = sys.argv[1]
     surname = sys.argv[2]
 
 pathIn = os.path.dirname(pathScore)
 scorename = os.path.basename(pathScore)
-    
+
 
 #print(sys.argv)
 
@@ -140,9 +140,6 @@ with open(os.path.join(pathOut, 'DET_th_far_frr.txt'), 'w') as f:
     # f.writelines('th    FAR    FRR\n')
     for i in range(len(fpr)):
         f.writelines('%.6f\t%.10f\t%.10f\n'%(thresholds[i], fpr[i], fnr[i])) #
-        
-
-
 
 
 pdf = PdfPages(os.path.join(pathOut, 'roc_det.pdf'))
@@ -160,7 +157,7 @@ plt.plot(np.linspace(0, 100, 101), np.linspace(100, 0, 101), 'k-', label='EER')
 # plt.xlim([0, 5])
 # plt.ylim([90, 100])
 
-plt.xlim([-0.1, 1])
+plt.xlim([-0.1, 1]) # <---------
 plt.ylim([99, 100])
 
 # plt.xscale('log')
@@ -181,7 +178,7 @@ plt.figure()
 plt.plot(fpr, fnr, color='b', linestyle='-', marker='o', label='DET curve')
 plt.plot(np.linspace(0, 100, 101), np.linspace(0, 100, 101), 'k-', label='EER')
 
-plt.xlim([0, 5])
+plt.xlim([0, 5]) # <---------
 plt.ylim([0, 5])
 
 plt.legend(loc='best')

@@ -22,7 +22,6 @@ class NormSingleROI(object):
         # if not T.functional._is_tensor_image(tensor):
         #     raise TypeError('tensor is not a torch image.')
 
-
         c,h,w = tensor.size()
    
         if c != 1:
@@ -43,33 +42,32 @@ class NormSingleROI(object):
         if self.outchannels > 1:
             tensor = torch.repeat_interleave(tensor, repeats = self.outchannels, dim = 0)
 
-    
         return tensor
 
 
 
 class MyDataset(data.Dataset):
     
-    def __init__(self, txt, transforms=None, train=True, imside = 128, outchannels = 1):        
+    def __init__(self, txt, transforms=None, train=True, imside = 128, outchannels = 1):
 
         self.train = train
 
         self.imside = imside # 128, 224
         self.chs = outchannels # 1, 3
        
-        self.text_path = txt        
+        self.text_path = txt
 
-        self.transforms = transforms   
+        self.transforms = transforms
 
         if transforms is None:
             if not train: 
                 self.transforms = T.Compose([ 
-                                                        
-                    T.Resize(self.imside),                  
+
+                    T.Resize(self.imside),
                     T.ToTensor(),
-                    # T.Normalize(mean=[0.5], std=[0.5])    
+                    # T.Normalize(mean=[0.5], std=[0.5])
                     NormSingleROI(outchannels=self.chs)
-                    
+
                     ]) 
             else:
                 self.transforms = T.Compose([  
@@ -83,10 +81,11 @@ class MyDataset(data.Dataset):
                         T.RandomPerspective(distortion_scale=0.15, p=0.8)# (0.1, 0.2) (0.05, 0.05)
                         # T.RandomAffine(degrees=0, translate=(0., 0.), scale=(1.0, 1.0), shear=10)
                         ]),     
-               
+
                     T.ToTensor(),
-                    # T.Normalize(mean=[0.5], std=[0.5],), # T.Normalize(mean=[0.5,0.5,0.5],std=[0.5,0.5,0.5])
-                    NormSingleROI(outchannels=self.chs)                   
+                    # T.Normalize(mean=[0.5], std=[0.5],), 
+                    # T.Normalize(mean=[0.5,0.5,0.5],std=[0.5,0.5,0.5]),
+                    NormSingleROI(outchannels=self.chs)
                     ])
 
         self._read_txt_file()
@@ -117,11 +116,11 @@ class MyDataset(data.Dataset):
         img_path = self.images_path[index]
         label = self.images_label[index]
 
-        data = Image.open(img_path).convert('L')     
-        data = self.transforms(data)    
-            
+        data = Image.open(img_path).convert('L')
+        data = self.transforms(data)
+
         return data, int(label)
-    
+
 
     def __len__(self):
         return len(self.images_path)

@@ -5,10 +5,10 @@ import torch.nn.functional as F
 
 class ppnet(torch.nn.Module):
     def __init__(self, num_classes):
-        super(ppnet, self).__init__()    
+        super(ppnet, self).__init__()
 
         self.layer1 = torch.nn.Sequential()
-        self.layer1.add_module("conv", torch.nn.Conv2d(1, 16, 5, 1))#5#3#7
+        self.layer1.add_module("conv", torch.nn.Conv2d(1, 16, 5, 1)) #5 #3 #7
         self.layer1.add_module("bn", torch.nn.BatchNorm2d(16))
 
         self.layer2 = torch.nn.Sequential()
@@ -22,7 +22,7 @@ class ppnet(torch.nn.Module):
         self.layer3.add_module("bn", torch.nn.BatchNorm2d(64, momentum=0.001, affine=True, track_running_stats=True))
         self.layer3.add_module("sigmoid", torch.nn.Sigmoid())
         self.layer3.add_module("avgpool", torch.nn.AvgPool2d(2, 2))
-        
+
         self.layer4 = torch.nn.Sequential()
         self.layer4.add_module("conv", torch.nn.Conv2d(64, 64, 3, 1))
         self.layer4.add_module("bn", torch.nn.BatchNorm2d(64, momentum=0.001, affine=True, track_running_stats=True))
@@ -47,11 +47,10 @@ class ppnet(torch.nn.Module):
         self.drop2 = torch.nn.Dropout(p=0.25)
 
 
-        self.dis = torch.nn.PairwiseDistance(p=2,)   
+        self.dis = torch.nn.PairwiseDistance(p=2,)
 
 
         self.fc3 = torch.nn.Linear(512, num_classes)
-        
 
         # self.featuremap = torch.nn.Sequential()
         # self.featuremap.add_module('layer1', self.layer1)
@@ -73,8 +72,6 @@ class ppnet(torch.nn.Module):
         # self.classifier.add_module('fc3', self.fc3)
 
 
-
-
     def forward(self, x):
         x = self.layer1(x)
         x = self.layer2(x)
@@ -82,7 +79,7 @@ class ppnet(torch.nn.Module):
         x = self.layer4(x)
         x = self.layer5(x)
 
-        x = x.view(x.size(0), -1) 
+        x = x.view(x.size(0), -1)
         
         x = self.fc1(x)
         x = self.bn1(x)
@@ -98,7 +95,7 @@ class ppnet(torch.nn.Module):
         b, _ = x.size()
         o1 = x[:b//2, :]
         o2 = x[b//2:, :]
-        dis = self.dis(o1, o2)      
+        dis = self.dis(o1, o2)
 
 
         x = self.fc3(x)
@@ -107,10 +104,10 @@ class ppnet(torch.nn.Module):
 
 
 
-    def getFeatureCode(self, x):   
-        
+    def getFeatureCode(self, x):
+
         # x = self.featuremap(x)
-        # x = x.view(x.size(0), -1)         
+        # x = x.view(x.size(0), -1)
         # x = self.code(x)
 
         x = self.layer1(x)
@@ -119,7 +116,7 @@ class ppnet(torch.nn.Module):
         x = self.layer4(x)
         x = self.layer5(x)
 
-        x = x.view(x.size(0), -1) 
+        x = x.view(x.size(0), -1)
         
         x = self.fc1(x)
         x = self.bn1(x)
@@ -129,7 +126,5 @@ class ppnet(torch.nn.Module):
         x = self.fc2(x)
         x = self.bn2(x)
         x = self.relu2(x)
-       
+
         return x
-
-

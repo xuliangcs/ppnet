@@ -112,7 +112,7 @@ histin = histin[:,0]
 histo = histo[:,0]
 
 # 0-100
-for i in inscore:    
+for i in inscore:
     i = int(round(i))
     histin[i] += 1
 for i in outscore:
@@ -153,7 +153,7 @@ with open(os.path.join(pathOut, 'matching_score_distr.txt'), 'w') as f:
     f.writelines('number of genuine matching:  %d\n'%inscore.shape)
     f.writelines('number of impostor matching: %d\n'%outscore.shape)
 
-    
+
 xin = np.linspace(0,1,samples+1)*(maxvin-minvin)+minvin
 xo = np.linspace(0,1,samples+1)*(maxvo-minvo)+minvo
 

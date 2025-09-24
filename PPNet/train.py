@@ -1,4 +1,4 @@
-import torch 
+import torch
 from torch.utils.data import Dataset, DataLoader
 import torch.nn as nn
 import torch.nn.functional as F
@@ -68,7 +68,7 @@ net = ppnet(num_classes=271) # IITD: 460    KTU: 145    Tongji: 600     REST: 35
 
 criterion = nn.CrossEntropyLoss()
 
-optimizer = optim.Adam(net.parameters(), lr=0.0001)#0.0003
+optimizer = optim.Adam(net.parameters(), lr=0.0001) #0.0003
 
 scheduler = lr_scheduler.StepLR(optimizer, step_size=100, gamma=0.8)
 
@@ -84,7 +84,7 @@ def contrastive_loss(target, dis, margin=5.0):
     y = np.zeros((1, n), dtype=float)
     if n > 1:
         y = y.squeeze()
-    y = torch.Tensor(y)    
+    y = torch.Tensor(y)
     
 
     margin = torch.Tensor(np.array([margin]*n))
@@ -96,12 +96,11 @@ def contrastive_loss(target, dis, margin=5.0):
     
     contra_loss = torch.mean((y) * torch.pow(dis, 2) +  (1-y) * torch.pow(torch.clamp(margin - dis, min=0.0), 2))     
     return contra_loss
- 
 
 
- 
+
 def fit(epoch, model, data_loader, phase='training', volatile=False):
-    
+
     if phase != 'training' and phase != 'validation':
         raise TypeError('input error!')
 
@@ -110,18 +109,17 @@ def fit(epoch, model, data_loader, phase='training', volatile=False):
 
     if phase == 'validation':
         model.eval()
-       
-    
+
 
     running_loss = 0
     running_correct = 0
 
     for batch_id, (data, target) in enumerate(data_loader):
 
-        if len(target) % 2 !=0:            
+        if len(target) % 2 !=0:
             target = torch.cat((target, torch.LongTensor((target[0],))),dim=0) 
             data = torch.cat((data, data[0,:,:,:].unsqueeze(0)), dim=0)
-        
+
         data = data.to(device)
         target = target.to(device)
 
@@ -130,13 +128,13 @@ def fit(epoch, model, data_loader, phase='training', volatile=False):
              optimizer.zero_grad()
 
         output, dis = model(data)
- 
+
 
         cross = criterion(output, target)
- 
+
         l2 = torch.norm(model.fc2.weight, 2) + torch.norm(model.fc3.weight, 2)
 
-        contra = contrastive_loss(target, dis, margin=5.0)     
+        contra = contrastive_loss(target, dis, margin=5.0)
 
 
         loss = cross + 1e-4*l2 + 2*1e-4*contra + 1e-4*torch.mean(torch.pow(dis, 2))
@@ -147,13 +145,12 @@ def fit(epoch, model, data_loader, phase='training', volatile=False):
 
         preds = output.data.max(dim=1, keepdim=True)[1] # (max_value, max_index)
         running_correct += preds.eq(target.data.view_as(preds)).cpu().sum().numpy()
-        
-        
+
         ##### update
         if phase == 'training':
             loss.backward()
             optimizer.step()
-           
+
 
     ### log
     num_imgs = len(data_loader.dataset)
@@ -166,9 +163,8 @@ def fit(epoch, model, data_loader, phase='training', volatile=False):
 
     if epoch % 10 == 0:
         print('epoch %d: \t%s loss is \t%7.5f    and %s \taccuracy is \t%d/%d \t%7.3f%%'%(epoch, phase, loss, phase, running_correct, num_imgs, accuracy))
-        
+
     return loss, accuracy
-    
 
 
 
@@ -204,15 +200,13 @@ for epoch in range(3000):
         torch.save(net.state_dict(), 'net_params.pth') 
 
         plotLossACC(train_losses, val_losses, train_accuracy, val_accuracy)
-        saveLossACC(train_losses, val_losses, train_accuracy, val_accuracy, bestacc)   
-            
+        saveLossACC(train_losses, val_losses, train_accuracy, val_accuracy, bestacc)
+
 
     # visualization
     if epoch % 200 == 0 or epoch == 2999: 
         saveFeatureMaps(net, data_loader_show, epoch)
         saveConvFilters(net, epoch)
-
-
 
 
 # finished training
@@ -226,10 +220,9 @@ print('%s'%(time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())))
 
 
 
-
 print('\n\n=======')
 print('testing ...')
-os.system(python_path+' test.py')
+os.system('python test.py')
 
 
 print('%s'%(time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())))
