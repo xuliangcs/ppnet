@@ -171,6 +171,8 @@ This project is under the CC-BY-NC 4.0 license. See [LICENSE](LICENSE) for detai
 
 [1] X. Liang, D. Fan, J. Yang, W. Jia, G. Lu and D. Zhang, "PKLNet: Keypoint Localization Neural Network for Touchless Palmprint Recognition Based on Edge-Aware Regression," in IEEE Journal of Selected Topics in Signal Processing, 17(3), pp. 662-676, May 2023, [doi](https://ieeexplore.ieee.org/document/10049596): 10.1109/JSTSP.2023.3241540. (`Palmprint ROI extraction`) [pklnet](https://github.com/xuliangcs/pklnet)🖖
 
-[2] X. Liang, Z. Li, D. Fan, B. Zhang, G. Lu and D. Zhang, "Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment," in IEEE Transactions on Systems, Man, and Cybernetics: Systems, vol. 52, no. 10, pp. 6464-6476, Oct. 2022, [doi](https://ieeexplore.ieee.org/document/9707646): 10.1109/TSMC.2022.3146777. (`Bimodal alignment`)
+[2] X. Liang, J. Yang, G. Lu and D. Zhang, "CompNet: Competitive Neural Network for Palmprint Recognition Using Learnable Gabor Kernels," in IEEE Signal Processing Letters, vol. 28, pp. 1739-1743, 2021, [doi](https://ieeexplore.ieee.org/document/9512475): 10.1109/LSP.2021.3103475. (`Orientation coding`) [compnet](https://github.com/xuliangcs/compnet)🖐️
 
-[3] PyTorch API Documents: https://pytorch.org/docs/stable/index.html
+[3] X. Liang, Z. Li, D. Fan, B. Zhang, G. Lu and D. Zhang, "Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment," in IEEE Transactions on Systems, Man, and Cybernetics: Systems, vol. 52, no. 10, pp. 6464-6476, Oct. 2022, [doi](https://ieeexplore.ieee.org/document/9707646): 10.1109/TSMC.2022.3146777. (`Bimodal alignment`)
+
+[4] PyTorch API Documents: https://pytorch.org/docs/stable/index.html
