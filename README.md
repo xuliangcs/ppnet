@@ -60,7 +60,6 @@ ppnet(
 - Profiler: `pip install ptflops` [Flops-Counter](https://github.com/sovrasov/flops-counter.pytorch) 
 
 
-
 ## 3. PyTorch Implementation
 
 ![](https://img.shields.io/badge/Ubuntu-tested-green) ![](https://img.shields.io/badge/Windows11-tested-green) 
@@ -85,7 +84,6 @@ Development environment establishment:
 tips:
 - `requirements.txt` could be found at the root folder of this project
 - use different [CUDA versions](https://pytorch.org/get-started/previous-versions/#v170)
-
 
 Tested versions:
 
