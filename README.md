@@ -159,7 +159,7 @@ The `.pth` file will be generated at the current folder, and all the other resul
         - Example: 0010_0003.bmp represents the 3rd sample of palm #10.
 
 Sample output of `genText.py`:
-test.txt:
+test.txt (Tongji):
 ```shell
 /home/sunny/datasets/Tongji/palmprint/ROI/session2/00001.bmp 0
 /home/sunny/datasets/Tongji/palmprint/ROI/session2/00002.bmp 0
@@ -186,6 +186,22 @@ test.txt:
 /home/sunny/datasets/Tongji/palmprint/ROI/session2/05998.bmp 599
 /home/sunny/datasets/Tongji/palmprint/ROI/session2/05999.bmp 599
 /home/sunny/datasets/Tongji/palmprint/ROI/session2/06000.bmp 599
+```
+test.txt (IITD):
+```shell
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0001_0001.bmp 0
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0001_0002.bmp 0
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0001_0003.bmp 0
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0002_0001.bmp 1
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0002_0002.bmp 1
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0002_0003.bmp 1
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0003_0001.bmp 2
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0003_0002.bmp 2
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0003_0003.bmp 2
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0004_0001.bmp 3
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0004_0002.bmp 3
+C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0004_0003.bmp 3
+...
 ```
 
 ## 6. Citation
