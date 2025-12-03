@@ -225,7 +225,6 @@ Xu Liang, Zhaoqun Li, Dandan Fan, Bob Zhang, Guangming Lu and David Zhang, "Inno
 
 This project is under the CC-BY-NC 4.0 license. See [LICENSE](LICENSE) for details.
 
-
 ## References
 
 [1] X. Liang, D. Fan, J. Yang, W. Jia, G. Lu and D. Zhang, "PKLNet: Keypoint Localization Neural Network for Touchless Palmprint Recognition Based on Edge-Aware Regression," in IEEE Journal of Selected Topics in Signal Processing, 17(3), pp. 662-676, May 2023, [doi](https://ieeexplore.ieee.org/document/10049596): 10.1109/JSTSP.2023.3241540. (`Palmprint ROI extraction`) [pklnet](https://github.com/xuliangcs/pklnet)🖖
