@@ -145,6 +145,7 @@ The `.pth` file will be generated at the current folder, and all the other resul
 [![How to use pretrained models](https://img.shields.io/badge/Goto-UsePretrained-green)](https://github.com/xuliangcs/ppnet/blob/main/res/README_pretrained.md)
 
 **Dataset preparation**
+1. The genText.py script is responsible for traversing images in the dataset folder and parsing class labels (starting from 0) based on each filename's format.
 
 ## 6. Citation
 🌻If it helps you, please cite the following paper:🌱
