@@ -160,6 +160,33 @@ The `.pth` file will be generated at the current folder, and all the other resul
 
 Sample output of `genText.py`:
 test.txt:
+```shell
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00001.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00002.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00003.bmp 0
+...
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00008.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00009.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00010.bmp 0
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00011.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00012.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00013.bmp 1
+...
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00018.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00019.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00020.bmp 1
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00021.bmp 2
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00022.bmp 2
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/00023.bmp 2
+...
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05991.bmp 599
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05992.bmp 599
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05993.bmp 599
+...
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05998.bmp 599
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/05999.bmp 599
+/home/sunny/datasets/Tongji/palmprint/ROI/session2/06000.bmp 599
+```
 
 ## 6. Citation
 🌻If it helps you, please cite the following paper:🌱
