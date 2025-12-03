@@ -157,7 +157,10 @@ The `.pth` file will be generated at the current folder, and all the other resul
         - IDs with fewer than four digits are zero-padded on the left.
         - zzz is the image file extension (e.g., bmp, jpg, tiff,etc.).
         - Example: 0010_0003.bmp represents the 3rd sample of palm #10.
-        
+
+Sample output of `genText.py`:
+test.txt:
+
 ## 6. Citation
 🌻If it helps you, please cite the following paper:🌱
 
