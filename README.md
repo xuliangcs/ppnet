@@ -87,7 +87,7 @@ tips:
 - use different [CUDA versions](https://pytorch.org/get-started/previous-versions/#v170)
 
 
-Supported versions:
+Tested versions:
 
 - pytorch：1.2 to 1.7
 
@@ -95,7 +95,7 @@ Supported versions:
 
 - python: 3.7 to 3.8
 
-
+- opencv: 4.8 (Generally, the default version is sufficient)
 
  :point_right:[more details](https://github.com/xuliangcs/env/blob/main/doc/PyTorch.md)
 
