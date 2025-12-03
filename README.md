@@ -189,18 +189,18 @@ test.txt (Tongji):
 ```
 test.txt (IITD):
 ```shell
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0001_0001.bmp 0
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0001_0002.bmp 0
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0001_0003.bmp 0
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0002_0001.bmp 1
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0002_0002.bmp 1
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0002_0003.bmp 1
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0003_0001.bmp 2
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0003_0002.bmp 2
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0003_0003.bmp 2
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0004_0001.bmp 3
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0004_0002.bmp 3
-C:\Users\HP\data\ppr\roi\IITD\pklnet\roi\0004_0003.bmp 3
+/home/sunny/datasets/IITD/roi/0001_0001.bmp 0
+/home/sunny/datasets/IITD/roi/0001_0002.bmp 0
+/home/sunny/datasets/IITD/roi/0001_0003.bmp 0
+/home/sunny/datasets/IITD/roi/0002_0001.bmp 1
+/home/sunny/datasets/IITD/roi/0002_0002.bmp 1
+/home/sunny/datasets/IITD/roi/0002_0003.bmp 1
+/home/sunny/datasets/IITD/roi/0003_0001.bmp 2
+/home/sunny/datasets/IITD/roi/0003_0002.bmp 2
+/home/sunny/datasets/IITD/roi/0003_0003.bmp 2
+/home/sunny/datasets/IITD/roi/0004_0001.bmp 3
+/home/sunny/datasets/IITD/roi/0004_0002.bmp 3
+/home/sunny/datasets/IITD/roi/0004_0003.bmp 3
 ...
 ```
 
