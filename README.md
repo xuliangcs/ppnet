@@ -232,3 +232,7 @@ This project is under the CC-BY-NC 4.0 license. See [LICENSE](LICENSE) for detai
 [3] X. Liang, Z. Li, D. Fan, B. Zhang, G. Lu and D. Zhang, "Innovative Contactless Palmprint Recognition System Based on Dual-Camera Alignment," in IEEE Transactions on Systems, Man, and Cybernetics: Systems, vol. 52, no. 10, pp. 6464-6476, Oct. 2022, [doi](https://ieeexplore.ieee.org/document/9707646): 10.1109/TSMC.2022.3146777. (`Bimodal alignment`)
 
 [4] PyTorch API Documents: https://pytorch.org/docs/stable/index.html
+
+![](./res/vis.png)
+
+Grad-CAM images of different convolutional layers of the proposed PPNet: (a) Conv1, (b) Conv2, (c) Conv3, (d) Conv4, and (e) Conv5.
